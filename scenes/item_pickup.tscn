@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://btjeabtx6sv8t"]
+
+[ext_resource type="Script" uid="uid://dnb7llpw87qco" path="res://scripts/ItemPickup.cs" id="1_lgqak"]
+[ext_resource type="Resource" uid="uid://cglrtue6jw86b" path="res://resources/item_manager.tres" id="2_yiukj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yebci"]
+radius = 256.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06q6m"]
+size = Vector2(128, 128)
+
+[node name="ItemPickup" type="Node2D" unique_id=1770929631]
+script = ExtResource("1_lgqak")
+ItemManager = ExtResource("2_yiukj")
+
+[node name="PlayerCloseArea" type="Area2D" parent="." unique_id=142627093]
+collision_layer = 4
+collision_mask = 2
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCloseArea" unique_id=1050795861]
+shape = SubResource("CircleShape2D_yebci")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=193385304]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_06q6m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=556537956]
+
+[connection signal="body_entered" from="PlayerCloseArea" to="." method="OnPlayerEnteredArea"]
+[connection signal="body_exited" from="PlayerCloseArea" to="." method="OnPlayerExitedArea"]
+[connection signal="input_event" from="ClickArea" to="." method="OnClickPickupButton"]

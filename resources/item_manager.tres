@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemManager" format=3 uid="uid://cglrtue6jw86b"]
+
+[ext_resource type="Script" uid="uid://de5hu0281kkx3" path="res://scripts/ItemManager.cs" id="1_ahat2"]
+
+[resource]
+script = ExtResource("1_ahat2")
+metadata/_custom_type_script = "uid://de5hu0281kkx3"

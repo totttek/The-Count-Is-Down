@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cvja3c124aqtp"]
+
+[ext_resource type="PackedScene" uid="uid://buos6juqk4fuh" path="res://scenes/kmicic.tscn" id="1_s3esy"]
+[ext_resource type="PackedScene" uid="uid://b3fqpmlidjmuu" path="res://scenes/test_scene.tscn" id="2_72e8q"]
+[ext_resource type="Script" uid="uid://cb13i5pexybb4" path="res://scripts/LevelContainer.cs" id="2_d2op2"]
+
+[node name="MainGame" type="Node" unique_id=659689109]
+
+[node name="Kmicic" parent="." unique_id=1965267996 instance=ExtResource("1_s3esy")]
+
+[node name="LevelContainer" type="Node2D" parent="." unique_id=1214132134 node_paths=PackedStringArray("fadeRect")]
+script = ExtResource("2_d2op2")
+fadeRect = NodePath("CanvasLayer/ColorRect")
+
+[node name="TestLevel" parent="LevelContainer" unique_id=156159517 instance=ExtResource("2_72e8q")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="LevelContainer" unique_id=1442713951]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="LevelContainer" unique_id=724149304]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="LevelContainer/CanvasLayer" unique_id=2069663241]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

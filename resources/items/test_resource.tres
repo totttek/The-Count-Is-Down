@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cu0122fhtkj1v"]
+
+[ext_resource type="Script" uid="uid://dunp3pxq2vhrw" path="res://scripts/ItemData.cs" id="1_1k1ul"]
+[ext_resource type="Texture2D" uid="uid://cfmekqtvont4s" path="res://icon.svg" id="1_ug347"]
+
+[resource]
+script = ExtResource("1_1k1ul")
+Id = "test_item"
+Name = "Test item"
+Description = "this is a test"
+Icon = ExtResource("1_ug347")
+metadata/_custom_type_script = "uid://dunp3pxq2vhrw"

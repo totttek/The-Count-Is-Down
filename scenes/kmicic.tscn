@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://buos6juqk4fuh"]
+
+[ext_resource type="Script" uid="uid://do206t0vu2ky8" path="res://scripts/Kmicic.cs" id="1_pu7rr"]
+[ext_resource type="Texture2D" uid="uid://cfmekqtvont4s" path="res://icon.svg" id="2_fv4ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yebci"]
+size = Vector2(256, 512)
+
+[node name="Kmicic" type="CharacterBody2D" unique_id=1965267996]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_pu7rr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540075504]
+position = Vector2(0, 92)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fv4ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393738622]
+shape = SubResource("RectangleShape2D_yebci")

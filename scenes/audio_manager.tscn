@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1um26ydgor5o"]
+
+[ext_resource type="Script" uid="uid://cbvsemfljxfih" path="res://scripts/AudioManager.cs" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://kyn1fj02hjab" path="res://assets/music/count ost 1.mp3" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://buxrar06y715x" path="res://assets/music/count ost 2.mp3" id="3_m6ggh"]
+
+[node name="AudioManager" type="Node" unique_id=1385826861]
+script = ExtResource("1_8qd8g")
+musicTracks = Array[AudioStream]([ExtResource("2_3asnw"), ExtResource("3_m6ggh")])

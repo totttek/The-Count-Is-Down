@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b3fqpmlidjmuu"]
+
+[ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_7ddre"]
+[ext_resource type="Texture2D" uid="uid://cfmekqtvont4s" path="res://icon.svg" id="2_nd71p"]
+[ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="3_nd71p"]
+[ext_resource type="Resource" uid="uid://cu0122fhtkj1v" path="res://resources/items/test_resource.tres" id="5_3qnke"]
+[ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="5_qjeyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06q6m"]
+size = Vector2(1920, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd71p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nd71p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level" type="Node2D" unique_id=156159517]
+script = ExtResource("1_7ddre")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=379822549]
+position = Vector2(960, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=825211060]
+shape = SubResource("RectangleShape2D_06q6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1845811351]
+position = Vector2(-2.8014183e-05, 0)
+scale = Vector2(15, 1)
+texture = ExtResource("2_nd71p")
+
+[node name="ItemPickup" parent="." unique_id=1770929631 instance=ExtResource("3_nd71p")]
+position = Vector2(1315, 766)
+ItemPickupId = "test_pickup"
+Item = ExtResource("5_3qnke")
+
+[node name="AnimatedSprite2D" parent="ItemPickup" index="2" unique_id=556537956]
+sprite_frames = SubResource("SpriteFrames_nd71p")
+
+[node name="TestSpawn" type="Marker2D" parent="." unique_id=1756171472]
+position = Vector2(177, 811)
+gizmo_extents = 32.0
+
+[node name="LevelChange" parent="." unique_id=698620107 instance=ExtResource("5_qjeyg")]
+position = Vector2(1857, 756)
+spawnPointName = "TestSpawn"
+
+[editable path="ItemPickup"]

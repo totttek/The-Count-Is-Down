@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://nmndd1kdyms4"]
+
+[ext_resource type="Script" uid="uid://rjwktwy3kn0e" path="res://scripts/LevelChange.cs" id="1_5h2di"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yebci"]
+size = Vector2(128, 512)
+
+[node name="LevelChange" type="Area2D" unique_id=698620107]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_5h2di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1243831161]
+shape = SubResource("RectangleShape2D_yebci")

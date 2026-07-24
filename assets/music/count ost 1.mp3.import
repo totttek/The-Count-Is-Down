@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kyn1fj02hjab"
+path="res://.godot/imported/count ost 1.mp3-0d0529661d7e2c77010dd6c5cebf3109.mp3str"
+
+[deps]
+
+source_file="res://assets/music/count ost 1.mp3"
+dest_files=["res://.godot/imported/count ost 1.mp3-0d0529661d7e2c77010dd6c5cebf3109.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
