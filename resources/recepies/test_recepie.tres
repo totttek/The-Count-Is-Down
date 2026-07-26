@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RecepieData" format=3 uid="uid://bivj0b34fuard"]
+
+[ext_resource type="Script" uid="uid://bcmntvnod1hlt" path="res://scripts/RecepieData.cs" id="1_3ujot"]
+
+[resource]
+script = ExtResource("1_3ujot")
+IngredientsIds = PackedStringArray("ANY", "ANY", "ANY")
+Result = 2
+ResutlAnimationName = "Test"
+metadata/_custom_type_script = "uid://bcmntvnod1hlt"

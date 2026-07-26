@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2cvv0iiqu75l"]
+
+[ext_resource type="Script" uid="uid://dunp3pxq2vhrw" path="res://scripts/ItemData.cs" id="1_c4mtm"]
+[ext_resource type="Texture2D" uid="uid://p4trduuwew4g" path="res://assets/art/items/mech.png" id="1_iy56i"]
+
+[resource]
+script = ExtResource("1_c4mtm")
+Id = "moss"
+Name = "Moss"
+Description = "Moss"
+Icon = ExtResource("1_iy56i")
+metadata/_custom_type_script = "uid://dunp3pxq2vhrw"

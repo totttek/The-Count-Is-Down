@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcw5b7htm5xwh"]
+
+[ext_resource type="Texture2D" uid="uid://cseiam56pv76t" path="res://assets/art/items/pajeczyna.png" id="1_77g6c"]
+[ext_resource type="Script" uid="uid://dunp3pxq2vhrw" path="res://scripts/ItemData.cs" id="1_j5i8u"]
+
+[resource]
+script = ExtResource("1_j5i8u")
+Id = "web"
+Name = "Web"
+Description = "Web"
+Icon = ExtResource("1_77g6c")
+metadata/_custom_type_script = "uid://dunp3pxq2vhrw"

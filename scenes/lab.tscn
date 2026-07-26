@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b4ek0do61mftu"]
+
+[ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_hflkp"]
+[ext_resource type="Texture2D" uid="uid://d273kc60fn3w" path="res://assets/art/labo.png" id="2_hflkp"]
+[ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_q4uld"]
+
+[node name="Lab" type="Node2D" unique_id=702910113]
+script = ExtResource("1_hflkp")
+CameraBounds = Rect2(960, 540, 960, 540)
+metadata/_custom_type_script = "uid://dd5i1c3yd3yak"
+
+[node name="Lab" type="Sprite2D" parent="." unique_id=1095962903]
+position = Vector2(960, 540)
+texture = ExtResource("2_hflkp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=339496992]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1261613149]
+position = Vector2(347.60864, 1088.2737)
+build_mode = 1
+polygon = PackedVector2Array(-346.60864, -241.27368, -52.608643, -256.27368, 297.39136, -258.27368, 834.39136, -241.27368, 1157.3914, -241.27368, 1442.3914, -233.27368, 1700.3914, -233.27368, 1700.3914, -5.2736816, -533.60864, -9.273682, -533.60864, -241.27368, -346.60864, -635.2737)
+
+[node name="LevelChange" parent="." unique_id=698620107 instance=ExtResource("3_q4uld")]
+position = Vector2(-124, 588)
+
+[node name="LevelChange2" parent="." unique_id=212780638 instance=ExtResource("3_q4uld")]
+position = Vector2(2044, 588)
+newLevelPath = "uid://b70dx0vxo81ex"
+spawnPointName = "left"
+
+[node name="table" type="Marker2D" parent="." unique_id=1099966366]
+position = Vector2(690, 588)
+
+[node name="left" type="Marker2D" parent="." unique_id=1966534238]
+position = Vector2(0, 588)
+
+[node name="right" type="Marker2D" parent="." unique_id=975263845]
+position = Vector2(1920, 588)

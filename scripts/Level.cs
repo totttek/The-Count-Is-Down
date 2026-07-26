@@ -3,8 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+[GlobalClass]
 public partial class Level : Node2D
 {
+	[Export] public Rect2 CameraBounds;
+
 	private readonly Dictionary<string, Vector2> spawnPoints = [];
 
 	public override void _Ready()

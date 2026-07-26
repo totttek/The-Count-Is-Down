@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ckgyggcqvnlgm"]
+
+[ext_resource type="Script" uid="uid://3ls644seqmr1" path="res://scripts/Crafting.cs" id="1_hkxxl"]
+[ext_resource type="Resource" uid="uid://cglrtue6jw86b" path="res://resources/item_manager.tres" id="2_5j4dg"]
+[ext_resource type="Resource" uid="uid://bivj0b34fuard" path="res://resources/recepies/test_recepie.tres" id="3_b7ltr"]
+[ext_resource type="Texture2D" uid="uid://dbqd6q1i7oxry" path="res://assets/art/Illustration56.png" id="4_x426n"]
+[ext_resource type="Script" uid="uid://14vq0xjq1kmf" path="res://scripts/CraftSlot.cs" id="5_s0ivr"]
+
+[node name="Crafting" type="Control" unique_id=1573547754 node_paths=PackedStringArray("inventoryArea")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkxxl")
+inventory = ExtResource("2_5j4dg")
+inventoryArea = NodePath("Invetntory")
+recepies = [ExtResource("3_b7ltr")]
+
+[node name="Illustration56" type="Sprite2D" parent="." unique_id=102981503]
+z_index = -1
+position = Vector2(960, 540)
+texture = ExtResource("4_x426n")
+
+[node name="Invetntory" type="Control" parent="." unique_id=1757436805]
+anchors_preset = 0
+offset_left = 109.0
+offset_top = 615.0
+offset_right = 713.0
+offset_bottom = 980.0
+
+[node name="CraftingSlot1" type="TextureRect" parent="." unique_id=1616659602]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 490.0
+offset_right = 1131.0
+offset_bottom = 618.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_s0ivr")
+
+[node name="CraftingSlot2" type="TextureRect" parent="." unique_id=1519249937]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 923.0
+offset_top = 372.0
+offset_right = 1051.0
+offset_bottom = 500.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_s0ivr")
+
+[node name="CraftingSlot3" type="TextureRect" parent="." unique_id=1095391245]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 856.0
+offset_top = 484.0
+offset_right = 984.0
+offset_bottom = 612.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_s0ivr")

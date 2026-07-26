@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0hd3yskiv8gm"]
+
+[ext_resource type="Script" uid="uid://bvgheogi05us3" path="res://scripts/GameMaster.cs" id="1_5dhe3"]
+[ext_resource type="Resource" uid="uid://cglrtue6jw86b" path="res://resources/item_manager.tres" id="2_g0w00"]
+
+[node name="GameMaster" type="Node" unique_id=1916174061]
+script = ExtResource("1_5dhe3")
+finalLevelPath = "uid://b4ek0do61mftu"
+timeTillDark = 15.0
+timeAfterDark = 0.0
+itemsColected = ExtResource("2_g0w00")

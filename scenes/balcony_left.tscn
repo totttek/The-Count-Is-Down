@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b70dx0vxo81ex"]
+
+[ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_ljvl7"]
+[ext_resource type="Texture2D" uid="uid://de2gcfvqyc2lv" path="res://assets/art/balcony_left.png" id="2_avtn6"]
+[ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_vt50p"]
+[ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_avtn6"]
+[ext_resource type="Resource" uid="uid://2cvv0iiqu75l" path="res://resources/items/moss.tres" id="5_266qu"]
+[ext_resource type="Resource" uid="uid://d4gq5f1urtr0p" path="res://resources/items/grzib.tres" id="5_h1wyc"]
+[ext_resource type="Texture2D" uid="uid://dv7i45fyhhi6q" path="res://assets/art/items/grzyb.png" id="5_vt50p"]
+[ext_resource type="Texture2D" uid="uid://p4trduuwew4g" path="res://assets/art/items/mech.png" id="6_irqd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1wyc"]
+radius = 128.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kn24"]
+size = Vector2(64, 64)
+
+[node name="BalconyLeft" type="Node2D" unique_id=702910113]
+script = ExtResource("1_ljvl7")
+CameraBounds = Rect2(960, 540, 960, 540)
+metadata/_custom_type_script = "uid://dd5i1c3yd3yak"
+
+[node name="BalconyLeft" type="Sprite2D" parent="." unique_id=1095962903]
+position = Vector2(960, 540)
+texture = ExtResource("2_avtn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=339496992]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1261613149]
+position = Vector2(347.60864, 1088.2737)
+build_mode = 1
+polygon = PackedVector2Array(-346.60864, -241.27368, -50.608643, -236.27368, 305.39136, -253.27368, 831.39136, -257.27368, 1161.3914, -260.27368, 1445.3914, -244.27368, 1700.3914, -244.27368, 1700.3914, -5.2736816, -533.60864, -9.273682, -533.60864, -241.27368)
+
+[node name="LevelChange" parent="." unique_id=698620107 instance=ExtResource("3_vt50p")]
+position = Vector2(-124, 588)
+newLevelPath = "uid://b4ek0do61mftu"
+spawnPointName = "right"
+
+[node name="LevelChange2" parent="." unique_id=212780638 instance=ExtResource("3_vt50p")]
+position = Vector2(2044, 588)
+newLevelPath = "uid://eofaa3p4jshn"
+spawnPointName = "left"
+
+[node name="left" type="Marker2D" parent="." unique_id=1966534238]
+position = Vector2(0, 588)
+
+[node name="right" type="Marker2D" parent="." unique_id=975263845]
+position = Vector2(1920, 588)
+
+[node name="Moss" parent="." unique_id=1770929631 instance=ExtResource("4_avtn6")]
+position = Vector2(1060, 613)
+itemPickupId = "moss_balcony"
+item = ExtResource("5_266qu")
+
+[node name="CollisionShape2D" parent="Moss/PlayerCloseArea" parent_id_path=PackedInt32Array(1770929631, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_h1wyc")
+
+[node name="CollisionShape2D" parent="Moss/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_5kn24")
+
+[node name="Sprite2D" parent="Moss" index="2" unique_id=771903195]
+texture = ExtResource("6_irqd3")
+
+[node name="Grzib" parent="." unique_id=1414046724 instance=ExtResource("4_avtn6")]
+position = Vector2(1391, 795)
+itemPickupId = "grzib_balcony"
+item = ExtResource("5_h1wyc")
+
+[node name="CollisionShape2D" parent="Grzib/PlayerCloseArea" parent_id_path=PackedInt32Array(1414046724, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_h1wyc")
+
+[node name="CollisionShape2D" parent="Grzib/ClickArea" parent_id_path=PackedInt32Array(1414046724, 193385304) index="0" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_5kn24")
+
+[node name="Sprite2D" parent="Grzib" index="2" unique_id=771903195]
+texture = ExtResource("5_vt50p")
+
+[editable path="Moss"]
+[editable path="Grzib"]

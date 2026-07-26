@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cchami6mwqpxo"]
+
+[ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_f612h"]
+[ext_resource type="Texture2D" uid="uid://br0in28wkp5fr" path="res://assets/art/hall.png" id="2_f612h"]
+[ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_3bgyu"]
+
+[node name="hall" type="Node2D" unique_id=702910113]
+script = ExtResource("1_f612h")
+CameraBounds = Rect2(0, 540, 5264, 540)
+metadata/_custom_type_script = "uid://dd5i1c3yd3yak"
+
+[node name="hall" type="Sprite2D" parent="." unique_id=1095962903]
+position = Vector2(2880, 540)
+texture = ExtResource("2_f612h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=339496992]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1261613149]
+position = Vector2(1325.8237, 944.929)
+build_mode = 1
+polygon = PackedVector2Array(-1324.8237, -75.928986, -981.82367, -79.928986, -670.82367, -84.928986, -145.82365, -103.928986, 185.17635, -98.928986, 468.17633, -85.928986, 721.17633, -85.928986, 991.17633, -99.928986, 1325.1763, -99.929016, 1656.1763, -87.929016, 1898.1763, -84.929016, 2183.1763, -73.929016, 2515.1763, -70.929016, 2806.1763, -72.929016, 3248.1763, -80.929016, 3585.1763, -72.929016, 3585.1763, -332.92902, 3935.1763, -333.92902, 3935.1763, 135.07098, -1511.8237, 134.07101, -1509.8237, -75.928986)
+
+[node name="LevelChange" parent="." unique_id=698620107 instance=ExtResource("3_3bgyu")]
+position = Vector2(-124, 588)
+newLevelPath = "uid://eofaa3p4jshn"
+spawnPointName = "right"
+
+[node name="left" type="Marker2D" parent="." unique_id=645876994]
+position = Vector2(0, 588)

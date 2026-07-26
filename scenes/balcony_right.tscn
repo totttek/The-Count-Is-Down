@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://eofaa3p4jshn"]
+
+[ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_02orl"]
+[ext_resource type="Texture2D" uid="uid://o3nf1ihc1je4" path="res://assets/art/balcony_right.png" id="2_02orl"]
+[ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_4ffr4"]
+[ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_vx8w3"]
+[ext_resource type="Resource" uid="uid://bcw5b7htm5xwh" path="res://resources/items/web.tres" id="5_wbbaa"]
+[ext_resource type="Texture2D" uid="uid://cseiam56pv76t" path="res://assets/art/items/pajeczyna.png" id="6_mr52x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx8w3"]
+size = Vector2(100, 100)
+
+[node name="BalconyRight" type="Node2D" unique_id=702910113]
+script = ExtResource("1_02orl")
+CameraBounds = Rect2(960, 540, 960, 540)
+metadata/_custom_type_script = "uid://dd5i1c3yd3yak"
+
+[node name="BalconyRight" type="Sprite2D" parent="." unique_id=1095962903]
+position = Vector2(960, 540)
+texture = ExtResource("2_02orl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=339496992]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1261613149]
+position = Vector2(664.812, 937.9951)
+build_mode = 1
+polygon = PackedVector2Array(-663.812, -90.99512, -323.812, -102.99512, -11.811981, -102.99512, 515.188, -96.99512, 845.188, -86.99512, 1128.188, -85.99512, 1382.188, -85.99512, 1383.188, 145.00488, -850.812, 141.00488, -850.812, -90.99512)
+
+[node name="LevelChange" parent="." unique_id=698620107 instance=ExtResource("3_4ffr4")]
+position = Vector2(-124, 588)
+newLevelPath = "uid://b70dx0vxo81ex"
+spawnPointName = "right"
+
+[node name="LevelChange2" parent="." unique_id=1252666543 instance=ExtResource("3_4ffr4")]
+position = Vector2(2044, 588)
+newLevelPath = "uid://cchami6mwqpxo"
+spawnPointName = "left"
+
+[node name="left" type="Marker2D" parent="." unique_id=645876994]
+position = Vector2(0, 588)
+
+[node name="right" type="Marker2D" parent="." unique_id=899705922]
+position = Vector2(1920, 588)
+
+[node name="Web" parent="." unique_id=1770929631 instance=ExtResource("4_vx8w3")]
+position = Vector2(622, 216)
+itemPickupId = "web_balcony"
+item = ExtResource("5_wbbaa")
+
+[node name="CollisionShape2D" parent="Web/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_vx8w3")
+
+[node name="Sprite2D" parent="Web" index="2" unique_id=771903195]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_mr52x")
+
+[editable path="Web"]
