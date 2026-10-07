@@ -8,6 +8,7 @@ public partial class LevelContainer : Node2D
 	private Level currentLevel;
 
 	[Signal] public delegate void LevelLoadedEventHandler();
+	[Signal] public delegate void IsScreenBlackEventHandler();
 	public override void _Ready()
 	{
 		currentLevel = GetChild<Level>(0);
@@ -69,6 +70,8 @@ public partial class LevelContainer : Node2D
 
 		await ToSignal(GetTree().CreateTimer(0.1f), SceneTreeTimer.SignalName.Timeout);
 		await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
+		EmitSignal("IsScreenBlack");
 
 		Tween fadeOutTween = CreateTween();
 		fadeOutTween.TweenProperty(fadeRect, "color:a", 0.0f, 0.25f);

@@ -6,8 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_avtn6"]
 [ext_resource type="Resource" uid="uid://2cvv0iiqu75l" path="res://resources/items/moss.tres" id="5_266qu"]
 [ext_resource type="Resource" uid="uid://d4gq5f1urtr0p" path="res://resources/items/grzib.tres" id="5_h1wyc"]
+[ext_resource type="Resource" uid="uid://inodch5lo0g1" path="res://resources/items/blue.tres" id="5_moqmd"]
 [ext_resource type="Texture2D" uid="uid://dv7i45fyhhi6q" path="res://assets/art/items/grzyb.png" id="5_vt50p"]
 [ext_resource type="Texture2D" uid="uid://p4trduuwew4g" path="res://assets/art/items/mech.png" id="6_irqd3"]
+[ext_resource type="Texture2D" uid="uid://bbnhtoruvtxev" path="res://assets/art/items/blue.png" id="6_moqmd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_irqd3"]
+radius = 222.009
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moqmd"]
+size = Vector2(123, 119)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1wyc"]
 radius = 128.0
@@ -47,15 +55,32 @@ position = Vector2(0, 588)
 [node name="right" type="Marker2D" parent="." unique_id=975263845]
 position = Vector2(1920, 588)
 
-[node name="Moss" parent="." unique_id=1770929631 instance=ExtResource("4_avtn6")]
+[node name="Blue" parent="." unique_id=1770929631 instance=ExtResource("4_avtn6")]
+position = Vector2(1820, 476)
+itemPickupId = "blue_balcony"
+item = ExtResource("5_moqmd")
+
+[node name="CollisionShape2D" parent="Blue/PlayerCloseArea" parent_id_path=PackedInt32Array(1770929631, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_irqd3")
+
+[node name="CollisionShape2D" parent="Blue/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+position = Vector2(-2.5, -4.5)
+shape = SubResource("RectangleShape2D_moqmd")
+
+[node name="Sprite2D" parent="Blue" index="2" unique_id=771903195]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moqmd")
+
+[node name="Moss" parent="." unique_id=42714107 instance=ExtResource("4_avtn6")]
 position = Vector2(1060, 613)
 itemPickupId = "moss_balcony"
 item = ExtResource("5_266qu")
 
-[node name="CollisionShape2D" parent="Moss/PlayerCloseArea" parent_id_path=PackedInt32Array(1770929631, 142627093) index="0" unique_id=1050795861]
+[node name="CollisionShape2D" parent="Moss/PlayerCloseArea" parent_id_path=PackedInt32Array(42714107, 142627093) index="0" unique_id=1050795861]
 shape = SubResource("CircleShape2D_h1wyc")
 
-[node name="CollisionShape2D" parent="Moss/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+[node name="CollisionShape2D" parent="Moss/ClickArea" parent_id_path=PackedInt32Array(42714107, 193385304) index="0" unique_id=1846715320]
 shape = SubResource("RectangleShape2D_5kn24")
 
 [node name="Sprite2D" parent="Moss" index="2" unique_id=771903195]
@@ -75,5 +100,6 @@ shape = SubResource("RectangleShape2D_5kn24")
 [node name="Sprite2D" parent="Grzib" index="2" unique_id=771903195]
 texture = ExtResource("5_vt50p")
 
+[editable path="Blue"]
 [editable path="Moss"]
 [editable path="Grzib"]

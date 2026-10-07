@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public partial class AudioManager : Node
 {
+	public static AudioManager Instance { get; private set; }
+
 	[Export] private AudioStream[] musicTracks;
 
 	[Export] private int audioPlayersAmmount = 8;
@@ -14,6 +16,8 @@ public partial class AudioManager : Node
 
 	public override void _Ready()
 	{
+		Instance = this;
+
 		for(int i = 0; i < audioPlayersAmmount; i++)
 		{
 			var audioPlayer = new AudioStreamPlayer() { Bus = "SFX" };

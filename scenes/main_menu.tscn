@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dkyoavbnloxry"]
+
+[ext_resource type="Texture2D" uid="uid://d273kc60fn3w" path="res://assets/art/labo.png" id="1_7mobx"]
+[ext_resource type="Script" uid="uid://c5i7m2ky3bh1j" path="res://scripts/MainMenu.cs" id="1_qiesh"]
+[ext_resource type="Texture2D" uid="uid://sfcx270dbeej" path="res://assets/art/background.png" id="2_mvo6b"]
+[ext_resource type="FontFile" uid="uid://0a4skwr80rkr" path="res://assets/CountDown.ttf" id="2_qiesh"]
+[ext_resource type="Texture2D" uid="uid://rst6sbjqn0p7" path="res://assets/art/Illustration68 (2).png" id="5_8ln24"]
+
+[node name="MainMenu" type="Node" unique_id=747235878]
+script = ExtResource("1_qiesh")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=647510265]
+position = Vector2(960, 540)
+texture = ExtResource("2_mvo6b")
+
+[node name="Labo" type="Sprite2D" parent="." unique_id=600258306]
+position = Vector2(960, 540)
+texture = ExtResource("1_7mobx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=720613496]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=519640566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="CanvasLayer/Control" unique_id=1624083536]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -430.0
+offset_top = 397.0
+offset_right = -138.0
+offset_bottom = 478.0
+grow_horizontal = 0
+theme_override_colors/icon_pressed_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_colors/icon_hover_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_fonts/font = ExtResource("2_qiesh")
+theme_override_font_sizes/font_size = 72
+text = "Play"
+icon = ExtResource("5_8ln24")
+flat = true
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control" unique_id=806468706]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -430.0
+offset_top = 516.0
+offset_right = -138.0
+offset_bottom = 597.0
+grow_horizontal = 0
+theme_override_colors/icon_pressed_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_colors/icon_hover_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_fonts/font = ExtResource("2_qiesh")
+theme_override_font_sizes/font_size = 72
+text = "Quit"
+icon = ExtResource("5_8ln24")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Quit" to="." method="OnQuitPressed"]

@@ -109,18 +109,16 @@ public partial class Crafting : Control
 			return;
 		}
 
-		switch (recepieResult.Result)
-		{
-			case RecepieResult.Antidiote:
-				GD.Print("WIN!");
-				break;
-			case RecepieResult.Poison:
-				GD.Print("Death!");
-				break;
-			case RecepieResult.Noting:
-				GD.Print("Death anyway due to prevois poison!");
-				break;
-		}
-		GD.Print("Crafting c:");
+		CraftingEnded(recepieResult.ResutlAnimationName, recepieResult.Result);
+	}
+
+	public async void CraftingEnded(string animationName, RecepieResult result)
+	{
+		await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
+
+		modulate.MouseFilter = MouseFilterEnum.Ignore;
+		ProcessMode = ProcessModeEnum.Disabled;
+
+		GameMaster.Instance.CraftingEnded(animationName, result);
 	}
 }

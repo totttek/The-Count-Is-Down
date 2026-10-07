@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oyxwijwct6d3"
+path="res://.godot/imported/count click.mp3-a00e8cc2ee50e096c81a1d740c76c93b.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/count click.mp3"
+dest_files=["res://.godot/imported/count click.mp3-a00e8cc2ee50e096c81a1d740c76c93b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

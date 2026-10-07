@@ -3,6 +3,20 @@
 [ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_hflkp"]
 [ext_resource type="Texture2D" uid="uid://d273kc60fn3w" path="res://assets/art/labo.png" id="2_hflkp"]
 [ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_q4uld"]
+[ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_4kvtl"]
+[ext_resource type="Resource" uid="uid://b38hg40qumn4e" path="res://resources/items/syr.tres" id="5_f1r8i"]
+[ext_resource type="Texture2D" uid="uid://jmdraqoguqu3" path="res://assets/art/items/ser plesniowy.png" id="6_jy24p"]
+[ext_resource type="Resource" uid="uid://7af8nkmcun3y" path="res://resources/items/szczur.tres" id="7_xu7et"]
+[ext_resource type="Texture2D" uid="uid://cdtoymocraano" path="res://assets/art/items/szczur.png" id="8_q6p6e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_or42m"]
+radius = 128.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tteu"]
+size = Vector2(128, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m131j"]
+radius = 200.0
 
 [node name="Lab" type="Node2D" unique_id=702910113]
 script = ExtResource("1_hflkp")
@@ -28,6 +42,38 @@ position = Vector2(2044, 588)
 newLevelPath = "uid://b70dx0vxo81ex"
 spawnPointName = "left"
 
+[node name="Syr" parent="." unique_id=1770929631 instance=ExtResource("4_4kvtl")]
+position = Vector2(1104, 673)
+itemPickupId = "syr_lab"
+item = ExtResource("5_f1r8i")
+
+[node name="CollisionShape2D" parent="Syr/PlayerCloseArea" parent_id_path=PackedInt32Array(1770929631, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_or42m")
+
+[node name="CollisionShape2D" parent="Syr/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_5tteu")
+
+[node name="Sprite2D" parent="Syr" index="2" unique_id=771903195]
+texture = ExtResource("6_jy24p")
+
+[node name="Szczur" parent="." unique_id=2103401789 instance=ExtResource("4_4kvtl")]
+position = Vector2(283, 779)
+itemPickupId = "szczur_lab"
+item = ExtResource("7_xu7et")
+
+[node name="CollisionShape2D" parent="Szczur/PlayerCloseArea" parent_id_path=PackedInt32Array(2103401789, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_m131j")
+
+[node name="CollisionShape2D" parent="Szczur/ClickArea" parent_id_path=PackedInt32Array(2103401789, 193385304) index="0" unique_id=1846715320]
+position = Vector2(-14, 10)
+shape = SubResource("RectangleShape2D_5tteu")
+
+[node name="Sprite2D" parent="Szczur" index="2" unique_id=771903195]
+position = Vector2(-13.000004, 14.999985)
+rotation = 0.3242871
+scale = Vector2(0.40828362, 0.40828362)
+texture = ExtResource("8_q6p6e")
+
 [node name="table" type="Marker2D" parent="." unique_id=1099966366]
 position = Vector2(690, 588)
 
@@ -36,3 +82,6 @@ position = Vector2(0, 588)
 
 [node name="right" type="Marker2D" parent="." unique_id=975263845]
 position = Vector2(1920, 588)
+
+[editable path="Syr"]
+[editable path="Szczur"]

@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Canon Kmicic"
+config/name="The Count Is Down"
+run/main_scene="uid://dkyoavbnloxry"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b2xsq7blrdeuu"
+config/windows_native_icon="res://assets/art/Icon.ico"
 
 [audio]
 

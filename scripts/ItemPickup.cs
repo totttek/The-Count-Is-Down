@@ -37,7 +37,7 @@ public partial class ItemPickup : Node2D
 	{
 		if (isPlayerInRange && playerInRange != null)
 		{
-			brightness += (brightness < maxBrightness)? (float)delta : 0f;
+			brightness += (brightness < maxBrightness)? (float)delta*2 : 0f;
 
 			itemTexture.Modulate = new Color(brightness, brightness, brightness);
 		}

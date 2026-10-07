@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjixfxjlc83yr"
+path="res://.godot/imported/count step 2.mp3-1677d7063294dea9ebfa8b89214bec68.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/count step 2.mp3"
+dest_files=["res://.godot/imported/count step 2.mp3-1677d7063294dea9ebfa8b89214bec68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

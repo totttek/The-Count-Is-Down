@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://3ls644seqmr1" path="res://scripts/Crafting.cs" id="1_hkxxl"]
 [ext_resource type="Resource" uid="uid://cglrtue6jw86b" path="res://resources/item_manager.tres" id="2_5j4dg"]
-[ext_resource type="Resource" uid="uid://bivj0b34fuard" path="res://resources/recepies/test_recepie.tres" id="3_b7ltr"]
-[ext_resource type="Texture2D" uid="uid://dbqd6q1i7oxry" path="res://assets/art/Illustration56.png" id="4_x426n"]
+[ext_resource type="Resource" uid="uid://bbq7tiowmgp8g" path="res://resources/recepies/banka.tres" id="3_5j4dg"]
+[ext_resource type="Resource" uid="uid://bivj0b34fuard" path="res://resources/recepies/nothing.tres" id="3_b7ltr"]
+[ext_resource type="Resource" uid="uid://d21617ty13jqy" path="res://resources/recepies/saved.tres" id="3_x426n"]
+[ext_resource type="Resource" uid="uid://25ia32jklqn8" path="res://resources/recepies/burn1.tres" id="5_2kgge"]
+[ext_resource type="Texture2D" uid="uid://4m0mdowsuatu" path="res://assets/art/stol.png" id="5_5j4dg"]
 [ext_resource type="Script" uid="uid://14vq0xjq1kmf" path="res://scripts/CraftSlot.cs" id="5_s0ivr"]
+[ext_resource type="Resource" uid="uid://oe8b78e503hn" path="res://resources/recepies/boom.tres" id="5_x426n"]
+[ext_resource type="Resource" uid="uid://c5wcjijt0myee" path="res://resources/recepies/glaz.tres" id="5_xjas3"]
+[ext_resource type="Resource" uid="uid://cq7k2xn0cicul" path="res://resources/recepies/burn2.tres" id="6_34nt0"]
+[ext_resource type="Resource" uid="uid://bgswp5vaeaa51" path="res://resources/recepies/burn3.tres" id="7_xd17m"]
 
 [node name="Crafting" type="Control" unique_id=1573547754 node_paths=PackedStringArray("inventoryArea")]
 layout_mode = 3
@@ -16,12 +23,12 @@ grow_vertical = 2
 script = ExtResource("1_hkxxl")
 inventory = ExtResource("2_5j4dg")
 inventoryArea = NodePath("Invetntory")
-recepies = [ExtResource("3_b7ltr")]
+recepies = [ExtResource("3_x426n"), ExtResource("5_x426n"), ExtResource("5_xjas3"), ExtResource("3_5j4dg"), ExtResource("5_2kgge"), ExtResource("6_34nt0"), ExtResource("7_xd17m"), ExtResource("3_b7ltr")]
 
 [node name="Illustration56" type="Sprite2D" parent="." unique_id=102981503]
 z_index = -1
 position = Vector2(960, 540)
-texture = ExtResource("4_x426n")
+texture = ExtResource("5_5j4dg")
 
 [node name="Invetntory" type="Control" parent="." unique_id=1757436805]
 anchors_preset = 0
@@ -33,10 +40,10 @@ offset_bottom = 980.0
 [node name="CraftingSlot1" type="TextureRect" parent="." unique_id=1616659602]
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 1003.0
-offset_top = 490.0
-offset_right = 1131.0
-offset_bottom = 618.0
+offset_left = 745.0
+offset_top = 332.0
+offset_right = 873.0
+offset_bottom = 460.0
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_s0ivr")
@@ -44,10 +51,10 @@ script = ExtResource("5_s0ivr")
 [node name="CraftingSlot2" type="TextureRect" parent="." unique_id=1519249937]
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 923.0
-offset_top = 372.0
-offset_right = 1051.0
-offset_bottom = 500.0
+offset_left = 1084.0
+offset_top = 324.0
+offset_right = 1212.0
+offset_bottom = 452.0
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_s0ivr")
@@ -55,10 +62,10 @@ script = ExtResource("5_s0ivr")
 [node name="CraftingSlot3" type="TextureRect" parent="." unique_id=1095391245]
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 856.0
-offset_top = 484.0
-offset_right = 984.0
-offset_bottom = 612.0
+offset_left = 942.0
+offset_top = 613.0
+offset_right = 1070.0
+offset_bottom = 741.0
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_s0ivr")

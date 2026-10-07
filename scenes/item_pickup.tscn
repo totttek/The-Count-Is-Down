@@ -13,7 +13,7 @@ size = Vector2(128, 128)
 [node name="ItemPickup" type="Node2D" unique_id=1770929631]
 script = ExtResource("1_lgqak")
 itemManager = ExtResource("2_yiukj")
-maxBrightness = 2.0
+maxBrightness = 3.0
 
 [node name="PlayerCloseArea" type="Area2D" parent="." unique_id=142627093]
 collision_layer = 4

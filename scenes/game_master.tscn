@@ -6,6 +6,5 @@
 [node name="GameMaster" type="Node" unique_id=1916174061]
 script = ExtResource("1_5dhe3")
 finalLevelPath = "uid://b4ek0do61mftu"
-timeTillDark = 15.0
-timeAfterDark = 0.0
-itemsColected = ExtResource("2_g0w00")
+endColor = Color(0.07058824, 0.07058824, 0.25490198, 1)
+itemsManager = ExtResource("2_g0w00")

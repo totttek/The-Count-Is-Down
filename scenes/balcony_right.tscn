@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_vx8w3"]
 [ext_resource type="Resource" uid="uid://bcw5b7htm5xwh" path="res://resources/items/web.tres" id="5_wbbaa"]
 [ext_resource type="Texture2D" uid="uid://cseiam56pv76t" path="res://assets/art/items/pajeczyna.png" id="6_mr52x"]
+[ext_resource type="Resource" uid="uid://byhe3kh86ptua" path="res://resources/items/mlecyk.tres" id="7_mr52x"]
+[ext_resource type="Texture2D" uid="uid://dx8idhh4nxei" path="res://assets/art/items/mlecyk.png" id="7_wbbaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx8w3"]
 size = Vector2(100, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mr52x"]
+radius = 200.0
 
 [node name="BalconyRight" type="Node2D" unique_id=702910113]
 script = ExtResource("1_02orl")
@@ -54,4 +59,21 @@ shape = SubResource("RectangleShape2D_vx8w3")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_mr52x")
 
+[node name="Mlecyk" parent="." unique_id=494028908 instance=ExtResource("4_vx8w3")]
+position = Vector2(1390, 812)
+itemPickupId = "mlecyk_balcony"
+item = ExtResource("7_mr52x")
+
+[node name="CollisionShape2D" parent="Mlecyk/PlayerCloseArea" parent_id_path=PackedInt32Array(494028908, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_mr52x")
+
+[node name="CollisionShape2D" parent="Mlecyk/ClickArea" parent_id_path=PackedInt32Array(494028908, 193385304) index="0" unique_id=1846715320]
+shape = SubResource("RectangleShape2D_vx8w3")
+
+[node name="Sprite2D" parent="Mlecyk" index="2" unique_id=771903195]
+position = Vector2(-7, -5.0000005)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_wbbaa")
+
 [editable path="Web"]
+[editable path="Mlecyk"]

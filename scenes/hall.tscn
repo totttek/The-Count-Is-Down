@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://dd5i1c3yd3yak" path="res://scripts/Level.cs" id="1_f612h"]
 [ext_resource type="Texture2D" uid="uid://br0in28wkp5fr" path="res://assets/art/hall.png" id="2_f612h"]
 [ext_resource type="PackedScene" uid="uid://nmndd1kdyms4" path="res://scenes/level_change.tscn" id="3_3bgyu"]
+[ext_resource type="PackedScene" uid="uid://btjeabtx6sv8t" path="res://scenes/item_pickup.tscn" id="4_q1d8p"]
+[ext_resource type="Resource" uid="uid://bqop217y845ii" path="res://resources/items/roza.tres" id="5_kib32"]
+[ext_resource type="Resource" uid="uid://btrvw5xdnlnso" path="res://resources/items/proh.tres" id="5_r542h"]
+[ext_resource type="Texture2D" uid="uid://cg6ukybokf7tq" path="res://assets/art/items/roza.png" id="6_4b063"]
+[ext_resource type="Texture2D" uid="uid://vngay6g0ekgi" path="res://assets/art/items/proh.png" id="6_ko3lj"]
+[ext_resource type="Resource" uid="uid://c6m1l7qnwjp2o" path="res://resources/items/gem.tres" id="9_2qo4b"]
+[ext_resource type="Texture2D" uid="uid://dhirkp0e3jh67" path="res://assets/art/items/gem.png" id="10_ppqcu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijpo5"]
+radius = 212.03773
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r542h"]
+size = Vector2(100, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avp52"]
+size = Vector2(63, 63.5)
 
 [node name="hall" type="Node2D" unique_id=702910113]
 script = ExtResource("1_f612h")
@@ -27,3 +43,59 @@ spawnPointName = "right"
 
 [node name="left" type="Marker2D" parent="." unique_id=645876994]
 position = Vector2(0, 588)
+
+[node name="Proh" parent="." unique_id=1770929631 instance=ExtResource("4_q1d8p")]
+position = Vector2(498, 755)
+itemPickupId = "proh_hall"
+item = ExtResource("5_r542h")
+
+[node name="CollisionShape2D" parent="Proh/PlayerCloseArea" parent_id_path=PackedInt32Array(1770929631, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_ijpo5")
+
+[node name="CollisionShape2D" parent="Proh/ClickArea" parent_id_path=PackedInt32Array(1770929631, 193385304) index="0" unique_id=1846715320]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_r542h")
+
+[node name="Sprite2D" parent="Proh" index="2" unique_id=771903195]
+position = Vector2(1.999999, -5.0000005)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_ko3lj")
+
+[node name="Mlecyk" parent="." unique_id=739804686 instance=ExtResource("4_q1d8p")]
+position = Vector2(4359, 428)
+itemPickupId = "roza_hall"
+item = ExtResource("5_kib32")
+
+[node name="CollisionShape2D" parent="Mlecyk/PlayerCloseArea" parent_id_path=PackedInt32Array(739804686, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_ijpo5")
+
+[node name="CollisionShape2D" parent="Mlecyk/ClickArea" parent_id_path=PackedInt32Array(739804686, 193385304) index="0" unique_id=1846715320]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_r542h")
+
+[node name="Sprite2D" parent="Mlecyk" index="2" unique_id=771903195]
+position = Vector2(1.999999, -5.0000005)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_4b063")
+
+[node name="Gem" parent="." unique_id=1689850739 instance=ExtResource("4_q1d8p")]
+position = Vector2(2995, 554)
+itemPickupId = "proh_hall"
+item = ExtResource("9_2qo4b")
+
+[node name="CollisionShape2D" parent="Gem/PlayerCloseArea" parent_id_path=PackedInt32Array(1689850739, 142627093) index="0" unique_id=1050795861]
+shape = SubResource("CircleShape2D_ijpo5")
+
+[node name="CollisionShape2D" parent="Gem/ClickArea" parent_id_path=PackedInt32Array(1689850739, 193385304) index="0" unique_id=1846715320]
+position = Vector2(4.5, 2.75)
+shape = SubResource("RectangleShape2D_avp52")
+
+[node name="Sprite2D" parent="Gem" index="2" unique_id=771903195]
+position = Vector2(1.999999, -5.0000005)
+rotation = -0.1693568
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_ppqcu")
+
+[editable path="Proh"]
+[editable path="Mlecyk"]
+[editable path="Gem"]
