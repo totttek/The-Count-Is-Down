@@ -169,6 +169,14 @@ or export a build using the preset configuration in `export_presets.cfg`.
 - The project mixes deterministic configuration data in resources with imperative scene logic in C#.
 - The end-state flow is intentionally exploit-sensitive: recipe outcome depends on inventory selection and the final timing state.
 
+## Credits
+
+This project was created as a collaborative project.
+
+- **Code and technical implementation:** Totek
+- **Art:** Radiance
+- **Music and audio:** Memiusz
+
 ## License
 
-No explicit license file is present in the repository yet. If you plan to redistribute or publish the project, confirm the intended licensing before doing so.
+No explicit license file is present in the repository yet. If you plan to redistribute or publish the project, confirm the intended licensing with everyone who contributed assets or other creative work.
